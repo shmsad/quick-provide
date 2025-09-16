@@ -1,7 +1,10 @@
 import React from "react";
 import Hero from "../components/Hero";
-import { useAppContext } from "../context/AppContext";
 import ServiceSection from "../components/ServiceSection";
+import WhyChooseUs from "../components/WhyChooseUs";
+import AboutPreview from "../components/AboutPreview";
+import CallToAction from "../components/CallToAction";
+import { useAppContext } from "../context/AppContext";
 
 export default function Home() {
     const { services } = useAppContext();
@@ -9,10 +12,10 @@ export default function Home() {
     return (
         <div>
             <Hero />
-
-            {/* Show only 3 services on Home */}
+            <AboutPreview />
             <ServiceSection services={services} limit={3} />
-
+            <WhyChooseUs />
+            <CallToAction />
         </div>
     );
 }
