@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+.goog-logo-link {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    font-size: 0 !important;
+}
+
+.goog-te-gadget select {
+    font-size: 14px !important;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
