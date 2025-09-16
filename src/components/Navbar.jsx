@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import Header from './Header';
 
 // ✅ Active class helper
 const active = ({ isActive }) => isActive ? 'text-indigo-600 font-semibold' : 'text-gray-700';
@@ -13,6 +14,7 @@ export default function Navbar() {
 
     return (
         <header className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-md">
+            <Header/>
             <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-0">
 
                 {/* Logo */}

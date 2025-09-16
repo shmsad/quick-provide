@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Stats from '../components/Stats';
 import Testimonials from '../components/Testimonials'
 import FAQ from "../components/FAQ";
+import HeroSection from "../components/HeroSection"
 
 
 
@@ -11,13 +12,10 @@ export default function AboutPage() {
     return (
         <div className="container mx-auto py-12">
 
-            {/* Hero Section */}
-            <section className="bg-indigo-600 text-white rounded-xl p-12 mb-12 text-center">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">About Quick Provide Pest Control Service</h1>
-                <p className="text-lg md:text-xl max-w-2xl mx-auto">
-                    QUICK PROVIDE PEST CONTROL SERVICE is an ISO 9001:2015 certified company providing professional pest control solutions in New Delhi, India. We are government-approved and licensed to ensure safe, reliable, and effective pest control.
-                </p>
-            </section>
+            <HeroSection
+                title="About Quick Provide Pest Control Service"
+                description="QUICK PROVIDE PEST CONTROL SERVICE is an ISO 9001:2015 certified company providing professional pest control solutions in New Delhi, India. We are government-approved and licensed to ensure safe, reliable, and effective pest control."
+            />
 
             {/* Company Info */}
             <section className="grid md:grid-cols-2 gap-8 mb-12">
@@ -43,7 +41,7 @@ export default function AboutPage() {
 
             {/* FAQ */}
             <FAQ />
-            
+
             {/* Call to Action */}
             <section className="text-center">
                 <h2 className="text-2xl font-bold mb-4">Need Pest Control Services?</h2>
