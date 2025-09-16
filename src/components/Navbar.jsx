@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// ✅ Active class helper for interviewer questions
+// ✅ Active class helper
 const active = ({ isActive }) => isActive ? 'text-indigo-600 font-semibold' : 'text-gray-700';
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
 
+    // ✅ Updated path order
+    const menuPaths = ["/", "/about", "/services", "/gallery", "/certificates", "/contact"];
+
     return (
         <header className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-md">
             <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-0">
+
                 {/* Logo */}
                 <NavLink to="/">
                     <img
@@ -22,7 +26,7 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex gap-6">
-                    {["/", "/services", "/gallery", "/certificates", "/about", "/contact"].map((path, idx) => (
+                    {menuPaths.map((path, idx) => (
                         <NavLink key={idx} to={path} className={active}>
                             {path === "/" ? "Home" : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
                         </NavLink>
@@ -48,7 +52,7 @@ export default function Navbar() {
                         >
                             <button onClick={() => setOpen(false)} className="mb-4 p-2 rounded bg-gray-100">Close</button>
                             <nav className="flex flex-col gap-4">
-                                {["/", "/services", "/gallery", "/certificates", "/about", "/contact"].map((path, idx) => (
+                                {menuPaths.map((path, idx) => (
                                     <NavLink key={idx} to={path} onClick={() => setOpen(false)} className={active}>
                                         {path === "/" ? "Home" : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
                                     </NavLink>
