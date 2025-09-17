@@ -4,20 +4,30 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 const faqData = [
     {
-        question: "How long does a typical pest control treatment take?",
+        question: "What types of printing services do you offer?",
         answer:
-            "Most treatments are completed within 1-3 hours depending on the property size and type of pests. We provide a detailed report after the service."
+            "We specialize in flex printing, banners, posters, hoardings, branding materials, and custom advertising solutions tailored to your business needs."
     },
     {
-        question: "Are the chemicals safe for children and pets?",
+        question: "Do you provide design support along with printing?",
         answer:
-            "Yes, we use eco-friendly and government-approved products that are safe when applied correctly."
+            "Yes, our creative team assists with graphic design, layout, and customization to ensure your brand message is impactful and professional."
     },
     {
-        question: "How often should I schedule pest control?",
+        question: "What is the usual turnaround time for printing orders?",
         answer:
-            "For preventive care, we recommend quarterly visits. For active infestations, we tailor a schedule based on the situation."
+            "Most orders are completed within 2-5 business days, depending on the size and complexity of the project. Urgent services are also available on request."
     },
+    {
+        question: "Do you offer bulk order discounts?",
+        answer:
+            "Yes, we provide competitive pricing and special discounts on bulk and recurring orders for businesses and organizations."
+    },
+    {
+        question: "Where are you located and do you deliver?",
+        answer:
+            "We are based in Okhla, New Delhi. Delivery services are available across Delhi NCR for your convenience."
+    }
 ];
 
 export default function FAQ() {

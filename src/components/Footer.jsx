@@ -5,10 +5,10 @@ import Translator from "./Translator";
 export default function Footer() {
     const [visits, setVisits] = useState(0);
     const [showTranslator, setShowTranslator] = useState(false);
-    const hasIncremented = useRef(false); // ✅ FIX: Declare useRef
+    const hasIncremented = useRef(false);
 
     useEffect(() => {
-        if (hasIncremented.current) return; // Exit if already incremented
+        if (hasIncremented.current) return;
         hasIncremented.current = true;
 
         let totalVisits = parseInt(localStorage.getItem("total_visits") || "0");
@@ -25,8 +25,10 @@ export default function Footer() {
                 <div>
                     <h3 className="text-xl font-bold mb-4">About</h3>
                     <p className="text-gray-400">
-                        QUICK PROVIDE PEST CONTROL SERVICE is an ISO 9001:2015 certified company,
-                        providing professional pest control solutions in New Delhi, India.
+                        QUICK PROVIDE FLEX PRINTING & ADVERTISING is a trusted
+                        service provider in Delhi NCR offering high-quality
+                        flex printing, hoardings, banners, glow signs and
+                        advertising solutions.
                     </p>
                 </div>
 
@@ -47,13 +49,13 @@ export default function Footer() {
                 <div>
                     <h3 className="text-xl font-bold mb-4">Services</h3>
                     <ul className="flex flex-col gap-2 text-gray-400">
-                        <li>Pre & Post Construction Anti Termite Treatment</li>
-                        <li>Termite Treatment</li>
-                        <li>Bedbug Control</li>
-                        <li>Cockroach Control</li>
-                        <li>Herbal & Gel Treatment</li>
-                        <li>Rat Control</li>
-                        <li>Water Tank Cleaning</li>
+                        <li>Flex & Vinyl Printing</li>
+                        <li>Glow Sign Boards</li>
+                        <li>Acrylic Signage</li>
+                        <li>Hoardings & Banners</li>
+                        <li>LED Boards</li>
+                        <li>One-Way Vision & Branding</li>
+                        <li>Corporate Advertising</li>
                     </ul>
                 </div>
 
@@ -61,18 +63,24 @@ export default function Footer() {
                 <div>
                     <h3 className="text-xl font-bold mb-4">Contact Us</h3>
                     <p className="text-gray-400">
-                        G-1, Anupam Plaza, Hauz Khas, Opp. Azad Aptts.,<br />
-                        Sri Aurobindo Marg, New Delhi-110016, India
+                        Okhla Industrial Area, Phase-II, New Delhi - 110020
                     </p>
-                    <p className="text-gray-400 mt-2">Phone: 8178290067, 9650403275</p>
-                    <p className="text-gray-400">Email: info@quickprovide.co.in</p>
+                    <p className="text-gray-400 mt-2">
+                        Phone: +91-9650403275, +91-9971001036
+                    </p>
+                    <p className="text-gray-400">Email: kpcontrol@gmail.com</p>
 
-                    {/* Visit Counter (per page load) */}
+                    <p className="text-gray-400 mt-2 text-sm">
+                        UDYAM-DL-08-0095527 | GSTIN: 07BDUPK7506B1ZH
+                    </p>
+                    <p className="text-gray-400 text-sm">Owner: Rajesh Kumar</p>
+
+                    {/* Visit Counter */}
                     <p className="text-gray-400 mt-4 text-sm">
                         🔁 Total Page Visits: <span className="font-semibold">{visits}</span>
                     </p>
 
-                    {/* Translator Button */}
+                    {/* Translator */}
                     <div className="mt-6">
                         <button
                             onClick={() => setShowTranslator(!showTranslator)}
@@ -83,11 +91,10 @@ export default function Footer() {
                         {showTranslator && <Translator />}
                     </div>
                 </div>
-
             </div>
 
             <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
-                &copy; {new Date().getFullYear()} QuickProvide Pest Control Service. All rights reserved.
+                &copy; {new Date().getFullYear()} Quick Provide Flex Printing & Advertising. All rights reserved.
             </div>
         </footer>
     );

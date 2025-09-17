@@ -30,10 +30,10 @@ export default function ContactPage() {
         <div className="container mx-auto py-12">
             <HeroSection
                 title="Contact Us"
-                description="Get in touch with Quick Provide Pest Control Service for expert pest management solutions."
+                description="Get in touch with Quick Provide Flex Printing & Advertising for banners, flex, hoardings, and other print solutions."
             />
 
-            {/* Contact form / details here */}
+            {/* Contact form / details */}
             <section className="container mx-auto py-16 px-4">
                 <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
                 <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -75,7 +75,7 @@ export default function ContactPage() {
                             )}
                         </form>
 
-                        {/* Minimal Contact Info Below Form */}
+                        {/* Minimal Contact Info */}
                         <div className="mt-6 text-sm text-gray-600 space-y-1">
                             <p><strong>📞</strong> {contact.phones.join(" / ")}</p>
                             <p><strong>📧</strong> {contact.email}</p>
@@ -84,10 +84,11 @@ export default function ContactPage() {
                     </div>
 
                     {/* Google Map */}
+                    {/* Google Map */}
                     <div className="w-full h-80 md:h-full">
                         <iframe
                             title="Company Location"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.2492121915397!2d77.2013891!3d28.591379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce26d33d3cbf7%3A0x39dc6184c4f0a204!2sAnupam%20Plaza%2C%20Hauz%20Khas%2C%20New%20Delhi%2C%20Delhi%20110016!5e0!3m2!1sen!2sin!4v1694954280194!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.9368258284!2d77.242506!3d28.552038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfb8b3fbdc0e7%3A0x52a3d4cfa66e021!2sOkhla%20Industrial%20Area%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
@@ -97,9 +98,9 @@ export default function ContactPage() {
                             className="rounded shadow"
                         ></iframe>
                     </div>
+
                 </div>
             </section>
         </div>
-
     );
 }

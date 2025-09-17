@@ -20,9 +20,9 @@ export default function Navbar() {
                 {/* Logo */}
                 <NavLink to="/">
                     <img
-                        src="https://cdn.dotpe.in/longtail/store-logo/8388661/bfQIQhHb.webp"
+                        src="\public\images\ChatGPT Image Sep 17, 2025, 04_48_08 PM.png"
                         alt="Quick Provide Logo"
-                        className="h-10 w-auto"
+                        className="h-10 w-40"
                     />
                 </NavLink>
 

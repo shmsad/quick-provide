@@ -1,18 +1,14 @@
 // src/components/Hero.jsx
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useAppContext } from "../context/AppContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Hero() {
-    const { contact } = useAppContext();
-    const tel = contact.phones[0];
-
     // Multiple backgrounds for carousel
     const images = [
-        "/images/hero-bg.jpg",
-        "/images/hero-bg2.jpg",
-        "/images/hero-bg3.jpg"
+        "/images/flex-bg1.jpg",
+        "/images/flex-bg2.jpg",
+        "/images/flex-bg3.jpg"
     ];
 
     const [index, setIndex] = useState(0);
@@ -51,31 +47,31 @@ export default function Hero() {
                     transition={{ duration: 0.8 }}
                     className="text-3xl md:text-5xl font-extrabold leading-tight"
                 >
-                    {contact.company}
+                    Quick Provide Flex Printing & Advertising
                 </motion.h1>
 
                 <p className="mt-4 text-sm md:text-lg">
-                    {contact.iso} • {contact.license} • Government Approved
+                    UDYAM-DL-08-0095527 • GSTIN: 07BDUPK7506B1ZH • Delhi NCR
                 </p>
 
                 <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <Link
-                        to="/contact"
+                        to="/services"
                         className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-blue-500 text-white font-semibold shadow"
                     >
-                        Get a Quote
+                        Explore Services
                     </Link>
 
                     <a
-                        href={`tel:${tel}`}
+                        href="tel:+919650403275"
                         className="px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 transition"
                     >
-                        📞 Call Now: {tel}
+                        📞 Call Now: +91-9650403275
                     </a>
                 </div>
 
                 <p className="mt-6 text-xs text-gray-200">
-                    Licensed: {contact.license} · {contact.iso}
+                    High-Quality Flex Printing • Hoardings • Banners • LED Boards
                 </p>
             </div>
 
