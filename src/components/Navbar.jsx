@@ -20,9 +20,9 @@ export default function Navbar() {
                 {/* Logo */}
                 <NavLink to="/">
                     <img
-                        src="\public\images\main_logo.png"
+                        src="\images\main_logo.png"
                         alt="Quick Provide Logo"
-                        className="h-10 w-auto"
+                        className="h-15 w-15 rounded-full object-cover relative z-10"
                     />
                 </NavLink>
 
