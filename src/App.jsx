@@ -8,6 +8,7 @@ import CertificatesPage from "./pages/CertificatesPage";
 import ContactPage from "./pages/ContactPage";
 import PageWrapper from "./components/PageWrapper";
 import AboutPage from "./pages/AboutPage";
+import ProductsPage from "./pages/ProductsPage";
 
 
 function AnimatedRoutes() {
@@ -16,6 +17,8 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+        {/* ✅ New Products Page */}
+        <Route path="/products" element={<PageWrapper><ProductsPage /></PageWrapper>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<PageWrapper><ServicesPage /></PageWrapper>} />
         <Route path="/gallery" element={<PageWrapper><GalleryPage /></PageWrapper>} />
