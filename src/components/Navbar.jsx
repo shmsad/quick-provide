@@ -20,9 +20,9 @@ export default function Navbar() {
                 {/* Logo */}
                 <NavLink to="/">
                     <img
-                        src="\public\images\ChatGPT Image Sep 17, 2025, 04_48_08 PM.png"
+                        src="\public\images\main_logo.png"
                         alt="Quick Provide Logo"
-                        className="h-10 w-40"
+                        className="h-10 w-auto"
                     />
                 </NavLink>
 
