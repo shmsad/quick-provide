@@ -1,4 +1,3 @@
-// src/components/WhyChooseUs.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -11,24 +10,22 @@ const items = [
 
 export default function WhyChooseUs() {
     return (
-        <section className="py-12 bg-indigo-50">
-            <div className="container mx-auto px-4">
-                <h3 className="text-2xl font-bold text-center mb-8">Why Choose Quick Provide Flex Printing?</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    {items.map((it, i) => (
-                        <motion.div
-                            key={i}
-                            className="bg-white p-6 rounded-xl shadow-md text-center"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: i * 0.08 }}
-                        >
-                            <div className="text-4xl mb-3">{it.emoji}</div>
-                            <h4 className="font-semibold mb-1">{it.title}</h4>
-                            <p className="text-sm text-gray-600">{it.desc}</p>
-                        </motion.div>
-                    ))}
-                </div>
+        <section className="py-16 bg-indigo-50">
+            <h3 className="text-4xl font-bold text-center mb-12">Why Choose Quick Provide?</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                {items.map((it, i) => (
+                    <motion.div
+                        key={i}
+                        className="p-6 rounded-3xl shadow-lg bg-gradient-to-br from-white to-indigo-100 text-center hover:shadow-2xl transition transform hover:-translate-y-2"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.1 }}
+                    >
+                        <div className="text-5xl mb-4">{it.emoji}</div>
+                        <h4 className="font-semibold mb-2">{it.title}</h4>
+                        <p className="text-gray-700 text-sm">{it.desc}</p>
+                    </motion.div>
+                ))}
             </div>
         </section>
     );

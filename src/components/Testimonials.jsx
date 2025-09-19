@@ -1,4 +1,3 @@
-// src/components/Testimonials.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -22,22 +21,24 @@ const reviews = [
 
 export default function Testimonials() {
     return (
-        <section className="py-12">
-            <div className="container mx-auto px-4">
-                <h3 className="text-2xl font-bold text-center mb-8">What Our Clients Say</h3>
-                <div className="grid md:grid-cols-3 gap-6">
+        <section className="py-16 bg-indigo-50">
+            <div className="container mx-auto px-6 text-center">
+                <h2 className="text-4xl font-bold text-gray-800 mb-12">
+                    What Our <span className="text-indigo-600">Clients Say</span>
+                </h2>
+                <div className="grid md:grid-cols-3 gap-8">
                     {reviews.map((r, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 10 }}
+                            initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: i * 0.08 }}
-                            className="bg-white p-6 rounded-xl shadow"
+                            transition={{ delay: i * 0.2, type: "spring", stiffness: 80 }}
+                            className="bg-gradient-to-br from-indigo-500 to-blue-500 text-white p-6 rounded-2xl shadow-2xl hover:shadow-3xl transition transform hover:-translate-y-2"
                         >
-                            <div className="text-yellow-500 mb-2">
+                            <div className="text-yellow-400 mb-2">
                                 {Array.from({ length: r.stars }).map((_, k) => "★").join("")}
                             </div>
-                            <p className="text-gray-700 mb-4">“{r.text}”</p>
+                            <p className="mb-4 italic">“{r.text}”</p>
                             <div className="font-semibold">{r.name}</div>
                         </motion.div>
                     ))}
