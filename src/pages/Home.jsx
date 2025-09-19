@@ -5,6 +5,12 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import AboutPreview from "../components/AboutPreview";
 import CallToAction from "../components/CallToAction";
 import { useAppContext } from "../context/AppContext";
+import Stats from "../components/Stats";
+import Testimonials from "../components/Testimonials";
+import FAQ from "../components/FAQ";
+import VisionMission from "../components/VisionMission";
+import GalleryPreview from "../components/GalleryPreview";
+
 
 export default function Home() {
     const { services } = useAppContext();
@@ -15,6 +21,11 @@ export default function Home() {
             <AboutPreview />
             <ServiceSection services={services} limit={3} />
             <WhyChooseUs />
+            <VisionMission/>
+            <Stats/>
+            <GalleryPreview/>
+            <Testimonials/>
+            <FAQ/>
             <CallToAction />
         </div>
     );

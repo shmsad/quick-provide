@@ -9,6 +9,7 @@ import ContactPage from "./pages/ContactPage";
 import PageWrapper from "./components/PageWrapper";
 import AboutPage from "./pages/AboutPage";
 import ProductsPage from "./pages/ProductsPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 
 function AnimatedRoutes() {
@@ -19,6 +20,8 @@ function AnimatedRoutes() {
         <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
         {/* ✅ New Products Page */}
         <Route path="/products" element={<PageWrapper><ProductsPage /></PageWrapper>} />
+        <Route path="/products/:category" element={<PageWrapper><ProductDetailPage /></PageWrapper>} />  // ✅ Category detail page
+        <Route path="/products/:category/:subcategory" element={<PageWrapper><ProductDetailPage /></PageWrapper>} /> // optional subcategory
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<PageWrapper><ServicesPage /></PageWrapper>} />
         <Route path="/gallery" element={<PageWrapper><GalleryPage /></PageWrapper>} />
