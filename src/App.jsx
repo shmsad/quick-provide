@@ -9,19 +9,27 @@ import ContactPage from "./pages/ContactPage";
 import PageWrapper from "./components/PageWrapper";
 import AboutPage from "./pages/AboutPage";
 import ProductsPage from "./pages/ProductsPage";
-import ProductDetailPage from "./pages/ProductDetailPage";
+import BannersPage from "./pages/products/BannersPage";
+import FlexPrintingPage from "./pages/products/FlexPrintingPage";
+import GlowSignPage from "./pages/products/GlowSignPage";
+import POSPage from "./pages/products/POSPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function AnimatedRoutes() {
   const location = useLocation();
   return (
     <AnimatePresence mode="wait">
+      <ScrollToTop />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
         {/* ✅ New Products Page */}
         <Route path="/products" element={<PageWrapper><ProductsPage /></PageWrapper>} />
-        <Route path="/products/:category" element={<PageWrapper><ProductDetailPage /></PageWrapper>} />  // ✅ Category detail page
-        <Route path="/products/:category/:subcategory" element={<PageWrapper><ProductDetailPage /></PageWrapper>} /> // optional subcategory
+        {/* /* Product Static Pages */}
+        <Route path="/products/flex-printing" element={<PageWrapper><FlexPrintingPage /></PageWrapper>} />
+        <Route path="/products/banners" element={<PageWrapper><BannersPage /></PageWrapper>} />
+        <Route path="/products/glow-sign" element={<PageWrapper><GlowSignPage /></PageWrapper>} />
+        <Route path="/products/pos" element={<PageWrapper><POSPage /></PageWrapper>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<PageWrapper><ServicesPage /></PageWrapper>} />
         <Route path="/gallery" element={<PageWrapper><GalleryPage /></PageWrapper>} />
