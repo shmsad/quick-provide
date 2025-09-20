@@ -14,6 +14,7 @@ import FlexPrintingPage from "./pages/products/FlexPrintingPage";
 import GlowSignPage from "./pages/products/GlowSignPage";
 import POSPage from "./pages/products/POSPage";
 import ScrollToTop from "./components/ScrollToTop";
+import VideoPage from "./pages/VideoPage";
 
 
 function AnimatedRoutes() {
@@ -30,9 +31,10 @@ function AnimatedRoutes() {
         <Route path="/products/banners" element={<PageWrapper><BannersPage /></PageWrapper>} />
         <Route path="/products/glow-sign" element={<PageWrapper><GlowSignPage /></PageWrapper>} />
         <Route path="/products/pos" element={<PageWrapper><POSPage /></PageWrapper>} />
-        <Route path="/about" element={<AboutPage />} />
+        <Route path="/about" element={<PageWrapper><AboutPage /></PageWrapper>} />
         <Route path="/services" element={<PageWrapper><ServicesPage /></PageWrapper>} />
         <Route path="/gallery" element={<PageWrapper><GalleryPage /></PageWrapper>} />
+        <Route path="/video" element={<PageWrapper><VideoPage/></PageWrapper>}/>
         <Route path="/certificates" element={<PageWrapper><CertificatesPage /></PageWrapper>} />
         <Route path="/contact" element={<PageWrapper><ContactPage /></PageWrapper>} />
       </Routes>

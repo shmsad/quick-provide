@@ -11,7 +11,6 @@ import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
 import CallToAction from "../components/CallToAction";
 import { useAppContext } from "../context/AppContext";
-
 export default function Home() {
     const { services, galleryImages } = useAppContext(); // galleryImages: array of image URLs
 

@@ -8,7 +8,7 @@ export default function Navbar() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    const menuPaths = ["/", "/products", "/about", "/services", "/gallery", "/contact"];
+    const menuPaths = ["/", "/products", "/about", "/services", "/gallery","/video", "/contact"];
     const active = ({ isActive }) =>
         isActive ? "text-indigo-600 font-semibold" : "text-gray-700";
 
