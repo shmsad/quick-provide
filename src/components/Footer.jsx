@@ -69,7 +69,7 @@ export default function Footer() {
                             onClick={() => setShowTranslator(!showTranslator)}
                             className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-105 transition transform text-white px-4 py-2 rounded-lg shadow-md w-full md:w-auto flex-1 text-center font-semibold"
                         >
-                            🌍 Translate Website
+                            🌍 Translator
                         </button>
                         {showTranslator && (
                             <div className="mt-1 p-3 bg-gray-800 bg-opacity-70 rounded-lg shadow-md backdrop-blur-md md:absolute">

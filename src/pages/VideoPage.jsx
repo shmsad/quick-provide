@@ -14,6 +14,10 @@ const videoData = [
         description: "Step-by-step guide to high-quality flex printing for banners and hoardings.",
         src: "https://www.youtube.com/embed/ScMzIvxBSi4",
         tips: ["Always use high-quality vinyl.", "Ensure proper alignment before printing."],
+        related: [
+            { title: "High-Quality Flex Printing Tips", link: "https://www.youtube.com/watch?v=0XpKlhVxSOo" },
+            { title: "Flex Banner Design Ideas", link: "https://www.youtube.com/watch?v=htE9hsLls90" },
+        ],
     },
     {
         id: 2,
@@ -22,6 +26,10 @@ const videoData = [
         description: "Learn how to install glow signs professionally and safely.",
         src: "https://www.youtube.com/embed/tgbNymZ7vqY",
         tips: ["Check wiring and power supply.", "Use level and measurements for perfect alignment."],
+        related: [
+            { title: "3D Glow Sign Boards Tutorial", link: "https://www.youtube.com/watch?v=3aVlRdycFqE" },
+            { title: "LED Glow Sign Tips", link: "https://www.youtube.com/watch?v=IAhFxy8F5ec" },
+        ],
     },
     {
         id: 3,
@@ -30,6 +38,10 @@ const videoData = [
         description: "Creative POS signage ideas for retail branding and promotions.",
         src: "https://www.youtube.com/embed/ysz5S6PUM-U",
         tips: ["Highlight promotional products prominently.", "Maintain consistent brand colors."],
+        related: [
+            { title: "POS Branding Techniques", link: "https://www.youtube.com/watch?v=ysz5S6PUM-U" },
+            { title: "Retail Display Strategies", link: "https://www.youtube.com/watch?v=tgbNymZ7vqY" },
+        ],
     },
     {
         id: 4,
@@ -38,6 +50,10 @@ const videoData = [
         description: "How to make your brand stand out using banners, flex, and vinyl printing.",
         src: "https://www.youtube.com/embed/3fumBcKC6RE",
         tips: ["Design for readability from distance.", "Use bold visuals to attract attention."],
+        related: [
+            { title: "Corporate Banner Designs", link: "https://www.youtube.com/watch?v=0XpKlhVxSOo" },
+            { title: "Advertising Strategies", link: "https://www.youtube.com/watch?v=3aVlRdycFqE" },
+        ],
     },
 ];
 
@@ -92,17 +108,14 @@ export default function VideoPage() {
                 ))}
             </div>
 
-            {/* Carousel Container */}
+            {/* Carousel */}
             <div className="relative">
-                {/* Left Arrow */}
                 <button
                     className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full shadow hover:bg-indigo-500 hover:text-white z-10"
                     onClick={() => scrollCarousel("left")}
                 >
                     <ChevronLeft size={28} />
                 </button>
-
-                {/* Right Arrow */}
                 <button
                     className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full shadow hover:bg-indigo-500 hover:text-white z-10"
                     onClick={() => scrollCarousel("right")}
@@ -110,7 +123,6 @@ export default function VideoPage() {
                     <ChevronRight size={28} />
                 </button>
 
-                {/* Carousel */}
                 <div
                     ref={carouselRef}
                     className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4"
@@ -145,7 +157,7 @@ export default function VideoPage() {
                 </div>
             </div>
 
-            {/* Lightbox Popup */}
+            {/* Lightbox */}
             <AnimatePresence>
                 {lightboxVideo && (
                     <motion.div
@@ -180,6 +192,26 @@ export default function VideoPage() {
                                         <li key={idx}>{tip}</li>
                                     ))}
                                 </ul>
+
+                                {/* Related Videos */}
+                                <div className="mt-4">
+                                    <h3 className="font-semibold text-indigo-600 mb-2">Related Videos:</h3>
+                                    <ul className="list-disc list-inside text-gray-600">
+                                        {lightboxVideo.related.map((rel, i) => (
+                                            <li key={i}>
+                                                <a
+                                                    href={rel.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-indigo-500 hover:text-pink-500 underline"
+                                                >
+                                                    {rel.title}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
                                 <button
                                     onClick={() => setLightboxVideo(null)}
                                     className="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
@@ -192,13 +224,9 @@ export default function VideoPage() {
                 )}
             </AnimatePresence>
 
-            {/* Testimonials / Success Stories */}
+            {/* Testimonials / FAQ / Call to Action */}
             <Testimonials />
-
-            {/* FAQ Section */}
             <FAQ />
-
-            {/* Call to Action */}
             <CallToAction />
         </div>
     );
