@@ -18,7 +18,36 @@ const backlitProducts = [
         images: ["/images/pc5.jpeg", "/images/pc4.jpeg"],
         details: "Weather-resistant material with high-impact illumination for night visibility."
     },
+    {
+        title: "LED Light Box Panels",
+        text: "Slim panels with uniform LED illumination.",
+        image: "/images/s6.jpeg",
+        images: ["/images/pc5.jpeg", "/images/pc6.jpeg"],
+        details: "Ideal for indoor branding, retail displays, and promotional graphics."
+    },
+    {
+        title: "Double-Sided Backlit Display",
+        text: "Visible from both sides for maximum exposure.",
+        image: "/images/s6.jpeg",
+        images: ["/images/s5.jpeg", "/images/s4.jpeg"],
+        details: "Perfect for shopping malls, airports, and exhibition centers."
+    },
+    {
+        title: "Outdoor LED Flex Frame",
+        text: "Sturdy outdoor backlit flex with LED illumination.",
+        image: "/images/s3.jpeg",
+        images: ["/images/s2.jpeg", "/images/s1.jpeg"],
+        details: "Weatherproof and bright, ideal for night-time promotions."
+    },
+    {
+        title: "Slim Edge-Lit Panels",
+        text: "Modern edge-lit design for sleek advertising displays.",
+        image: "/images/flex-bg3.jpg",
+        images: ["/images/flex-bg2.jpeg", "/images/flex-bg1.jpeg"],
+        details: "Compact and stylish panels for premium indoor settings."
+    },
 ];
+
 
 export default function BacklitFlexPrinting() {
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -97,8 +126,14 @@ export default function BacklitFlexPrinting() {
             {selectedProduct && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                     <div className="bg-white rounded-3xl p-6 max-w-lg w-full relative">
-                        <button className="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-gray-800"
-                            onClick={() => setSelectedProduct(null)}>&times;</button>
+                        <button
+                            className="absolute top-4 right-4 z-50 text-3xl font-bold text-white hover:text-red-500 bg-red-600 hover:bg-red-700 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition"
+                            onClick={() => setSelectedProduct(null)}
+                        >
+                            &times;
+                        </button>
+
+
                         <div className="relative mb-4">
                             <img src={selectedProduct.images[currentImage]} alt={selectedProduct.title} className="w-full h-48 object-cover rounded-xl" />
                             {selectedProduct.images.length > 1 && (
@@ -114,6 +149,7 @@ export default function BacklitFlexPrinting() {
                     </div>
                 </div>
             )}
+
         </div>
     );
 }

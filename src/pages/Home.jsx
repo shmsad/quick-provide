@@ -17,7 +17,7 @@ export default function Home() {
     const { services, galleryImages, teamMembers } = useAppContext(); // ✅ Include teamMembers
 
     return (
-        <div className="overflow-x-hidden">
+        <div className="overflow-x-hidden pt-12">
             {/* Hero Section */}
             <Hero />
 

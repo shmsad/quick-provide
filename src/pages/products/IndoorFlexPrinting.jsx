@@ -32,7 +32,22 @@ const indoorProducts = [
         images: ["/images/pc5.jpeg", "/images/pc6.jpg"],
         details: "Easy to set up, portable, and eye-catching.",
     },
+    {
+        title: "Table Tents",
+        text: "Small promotional displays for tables & counters.",
+        image: "/images/flex-bg1.jpg",
+        images: ["/images/flex-bg2.jpg", "/images/flex-bg.jpg"],
+        details: "Perfect for cafes, restaurants, and reception areas to showcase offers or messages.",
+    },
+    {
+        title: "Ceiling Danglers",
+        text: "Hanging promotional displays for indoor spaces.",
+        image: "/images/flex1.jpeg",
+        images: ["/images/flex2.jpeg", "/images/flex3.jpeg"],
+        details: "Catch customer attention from above with vibrant, lightweight designs.",
+    },
 ];
+
 
 export default function IndoorFlexPrinting() {
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -111,8 +126,12 @@ export default function IndoorFlexPrinting() {
             {selectedProduct && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                     <div className="bg-white rounded-3xl p-6 max-w-lg w-full relative">
-                        <button className="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-gray-800"
-                            onClick={() => setSelectedProduct(null)}>&times;</button>
+                        <button
+                            className="absolute top-4 right-4 z-50 text-3xl font-bold text-white hover:text-red-500 bg-red-600 hover:bg-red-700 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition"
+                            onClick={() => setSelectedProduct(null)}
+                        >
+                            &times;
+                        </button>
                         <div className="relative mb-4">
                             <img src={selectedProduct.images[currentImage]} alt={selectedProduct.title} className="w-full h-48 object-cover rounded-xl" />
                             {selectedProduct.images.length > 1 && (

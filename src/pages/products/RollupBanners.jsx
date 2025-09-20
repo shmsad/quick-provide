@@ -18,7 +18,36 @@ const rollupProducts = [
         images: ["/images/s2.jpeg", "/images/s3.jpeg"],
         details: "Premium material with excellent print finish."
     },
+    {
+        title: "Eco Roll-up",
+        text: "Environmentally friendly roll-up banners.",
+        image: "/images/flex2.jpeg",
+        images: ["/images/flex1.jpeg", "/images/flex3.jpeg"],
+        details: "Made from recycled materials without compromising quality."
+    },
+    {
+        title: "Double-Sided Roll-up",
+        text: "Banners visible from both sides for maximum exposure.",
+        image: "/images/pc1.jpeg",
+        images: ["/images/pc2.jpeg", "/images/pc3.jpeg"],
+        details: "Perfect for high-traffic areas and exhibitions."
+    },
+    {
+        title: "Outdoor Roll-up",
+        text: "Weather-resistant banners suitable for outdoor use.",
+        image: "/images/s4.jpeg",
+        images: ["/images/s5.jpeg", "/images/s6.jpeg"],
+        details: "Sturdy construction with high-quality print for outdoor events."
+    },
+    {
+        title: "Retractable Roll-up",
+        text: "Easy to set up and retract for portability.",
+        image: "/images/s3.jpeg",
+        images: ["/images/s2.jpeg", "/images/s1.jpeg"],
+        details: "Compact design, ideal for trade shows and office promotions."
+    },
 ];
+
 
 export default function RollupBanners() {
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -97,8 +126,12 @@ export default function RollupBanners() {
             {selectedProduct && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                     <div className="bg-white rounded-3xl p-6 max-w-lg w-full relative">
-                        <button className="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-gray-800"
-                            onClick={() => setSelectedProduct(null)}>&times;</button>
+                        <button
+                            className="absolute top-4 right-4 z-50 text-3xl font-bold text-white hover:text-red-500 bg-red-600 hover:bg-red-700 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition"
+                            onClick={() => setSelectedProduct(null)}
+                        >
+                            &times;
+                        </button>
                         <div className="relative mb-4">
                             <img src={selectedProduct.images[currentImage]} alt={selectedProduct.title} className="w-full h-48 object-cover rounded-xl" />
                             {selectedProduct.images.length > 1 && (

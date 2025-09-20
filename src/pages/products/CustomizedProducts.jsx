@@ -32,7 +32,22 @@ const customProducts = [
         images: ["/images/pc5.jpeg", "/images/pc6.jpeg"],
         details: "Ideal for gifts, home décor & memories.",
     },
+    {
+        title: "Custom Tote Bags",
+        text: "Eco-friendly tote bags with printed designs.",
+        image: "/images/flex1.jpeg",
+        images: ["/images/flex2.jpeg", "/images/flex3.jpeg"],
+        details: "Durable and stylish bags for shopping, giveaways, and promotions.",
+    },
+    {
+        title: "Personalized Keychains",
+        text: "Custom keychains for branding or gifts.",
+        image: "/images/flex-bg1.jpg",
+        images: ["/images/flex-bg2.jpg", "/images/flex-bg3.jpg"],
+        details: "Made from metal or acrylic with engraved or printed designs.",
+    },
 ];
+
 
 export default function CustomizedProducts() {
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -136,7 +151,7 @@ export default function CustomizedProducts() {
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                     <div className="bg-white rounded-3xl p-6 max-w-lg w-full relative">
                         <button
-                            className="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-gray-800"
+                            className="absolute top-4 right-4 z-50 text-3xl font-bold text-white hover:text-red-500 bg-red-600 hover:bg-red-700 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition"
                             onClick={() => setSelectedProduct(null)}
                         >
                             &times;

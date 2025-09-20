@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import {
+    FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaHome, FaInfoCircle, FaTools,
+    FaImages, FaFileAlt, FaPhone, FaEye, FaMapMarkerAlt, FaEnvelope
+} from "react-icons/fa";
+
 import Translator from "./Translator";
 
 export default function Footer() {
@@ -31,38 +35,6 @@ export default function Footer() {
                         QUICK PROVIDE FLEX PRINTING & ADVERTISING is a trusted service provider in Delhi NCR,
                         offering premium flex printing, hoardings, banners, glow signs & corporate advertising solutions.
                     </p>
-                </div>
-
-                {/* Quick Links */}
-                <div className="space-y-4">
-                    <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-pink-500">
-                        Quick Links
-                    </h3>
-                    <ul className="flex flex-col gap-2">
-                        <li><Link to="/" className="hover:text-indigo-300 transition">🏠 Home</Link></li>
-                        <li><Link to="/about" className="hover:text-indigo-300 transition">ℹ️ About</Link></li>
-                        <li><Link to="/services" className="hover:text-indigo-300 transition">🛠 Services</Link></li>
-                        <li><Link to="/gallery" className="hover:text-indigo-300 transition">🖼 Gallery</Link></li>
-                        <li><Link to="/certificates" className="hover:text-indigo-300 transition">📜 Certificates</Link></li>
-                        <li><Link to="/contact" className="hover:text-indigo-300 transition">📞 Contact</Link></li>
-                    </ul>
-                </div>
-
-                {/* Services */}
-                <div className="space-y-4">
-                    <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-pink-500">
-                        Our Services
-                    </h3>
-                    <ul className="flex flex-col gap-2 text-gray-200">
-                        <li><Link to="/products/flex-printing" className="hover:text-indigo-300 transition">✅ Flex & Vinyl Printing</Link></li>
-                        <li><Link to="/products/glow-sign" className="hover:text-indigo-300 transition">✅ Glow Sign Boards</Link></li>
-                        <li><Link to="/products/pos" className="hover:text-indigo-300 transition">✅ Acrylic Signage</Link></li>
-                        <li><Link to="/products/banners" className="hover:text-indigo-300 transition">✅ Hoardings & Banners</Link></li>
-                        <li><Link to="/products/glow-sign" className="hover:text-indigo-300 transition">✅ LED Boards</Link></li>
-                        <li><Link to="/products/flex-printing" className="hover:text-indigo-300 transition">✅ One-Way Vision & Branding</Link></li>
-                        <li><Link to="/services" className="hover:text-indigo-300 transition">✅ Corporate Advertising</Link></li>
-                    </ul>
-
                     {/* Translator + Web Link Buttons */}
                     <div className="mt-4 flex flex-col md:flex-row gap-3">
                         <button
@@ -86,9 +58,40 @@ export default function Footer() {
                         </a>
                     </div>
 
+                </div>
+
+                {/* Quick Links */}
+                <div className="space-y-4">
+                    <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-pink-500">
+                        Quick Links
+                    </h3>
+                    <ul className="flex flex-col gap-2">
+                        <li><Link to="/" className="hover:text-indigo-300 transition"><FaHome className="inline mr-2" />Home</Link></li>
+                        <li><Link to="/about" className="hover:text-indigo-300 transition"><FaInfoCircle className="inline mr-2" />About</Link></li>
+                        <li><Link to="/services" className="hover:text-indigo-300 transition"><FaTools className="inline mr-2" />Services</Link></li>
+                        <li><Link to="/gallery" className="hover:text-indigo-300 transition"><FaImages className="inline mr-2" />Gallery</Link></li>
+                        <li><Link to="/certificates" className="hover:text-indigo-300 transition"><FaFileAlt className="inline mr-2" />Certificates</Link></li>
+                        <li><Link to="/contact" className="hover:text-indigo-300 transition"><FaPhone className="inline mr-2" />Contact</Link></li>
+                    </ul>
+                </div>
+
+                {/* Services */}
+                <div className="space-y-4">
+                    <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-pink-500">
+                        Our Services
+                    </h3>
+                    <ul className="flex flex-col gap-2 text-gray-200">
+                        <li><Link to="/products/flex-printing" className="hover:text-indigo-300 transition">Flex & Vinyl Printing</Link></li>
+                        <li><Link to="/products/glow-sign" className="hover:text-indigo-300 transition">Glow Sign Boards</Link></li>
+                        <li><Link to="/products/pos" className="hover:text-indigo-300 transition">Acrylic Signage</Link></li>
+                        <li><Link to="/products/banners" className="hover:text-indigo-300 transition">Hoardings & Banners</Link></li>
+                        <li><Link to="/products/glow-sign" className="hover:text-indigo-300 transition">LED Boards</Link></li>
+                        <li><Link to="/products/flex-printing" className="hover:text-indigo-300 transition">One-Way Vision & Branding</Link></li>
+                        <li><Link to="/services" className="hover:text-indigo-300 transition">Corporate Advertising</Link></li>
+                    </ul>
                     {/* Visitor Counter */}
                     <p className="mt-4 text-sm flex items-center gap-2 justify-center md:justify-start">
-                        <span className="animate-pulse text-green-400 text-lg">👁</span>
+                        <FaEye className="text-green-400 text-lg animate-pulse" />
                         <span className="font-semibold text-white">{visits}</span> Visitors
                     </p>
                 </div>
@@ -98,9 +101,9 @@ export default function Footer() {
                     <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-pink-500">
                         Contact Us
                     </h3>
-                    <p className="text-gray-200">📍 Okhla Industrial Area, Phase-II, New Delhi - 110020</p>
-                    <p className="text-gray-200 mt-2">📞 +91-9650403275, +91-9971001036</p>
-                    <p className="text-gray-200">✉️ kpcontrol@gmail.com</p>
+                    <p className="text-gray-200"><FaMapMarkerAlt className="inline mr-2" />Okhla Industrial Area, Phase-II, New Delhi - 110020</p>
+                    <p className="text-gray-200 mt-2"><FaPhone className="inline mr-2" />+91-9650403275, +91-9971001036</p>
+                    <p className="text-gray-200"><FaEnvelope className="inline mr-2" />kpcontrol@gmail.com</p>
                     <p className="text-gray-400 mt-2 text-sm">UDYAM-DL-08-0095527 | GSTIN: 07BDUPK7506B1ZH</p>
                     <p className="text-gray-400 text-sm">Owner: Rajesh Kumar</p>
 
@@ -115,18 +118,21 @@ export default function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-300 text-sm flex flex-col md:flex-row justify-center items-center gap-2">
+            <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-300 text-sm flex flex-col gap-1">
                 <span>&copy; {new Date().getFullYear()} Quick Provide Flex Printing & Advertising. All rights reserved.</span>
-                <span>|</span>
-                <a
-                    href="https://webworldhub.co.in/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-400 hover:text-yellow-400 font-semibold transition-colors"
-                >
-                    Developed & Designed by Web World Hub
-                </a>
+                <span>
+                    Developed & Designed by{" "}
+                    <a
+                        href="https://webworldhub.co.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-indigo-400 hover:text-yellow-400 font-semibold transition-colors"
+                    >
+                        Web World Hub
+                    </a>
+                </span>
             </div>
+
         </footer>
     );
 }

@@ -8,7 +8,7 @@ import HeroSection from "../components/HeroSection";
 
 export default function AboutPage() {
     return (
-        <div className="container mx-auto py-12">
+        <div className="container mx-auto pt-12">
 
             <HeroSection
                 title="About Quick Provide Flex Printing And Advertising"

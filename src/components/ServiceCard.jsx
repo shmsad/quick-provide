@@ -22,7 +22,7 @@ export default function ServiceCard({ title, description, image, onLearnMore }) 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={onLearnMore}
-                className="px-6 py-2 bg-indigo-600 text-white rounded-full font-semibold hover:bg-indigo-500 transition"
+                className="px-6 py-2 bg-indigo-600 text-white rounded-full font-semibold hover:bg-indigo-500 transition cursor-pointer"
             >
                 Learn More
             </motion.button>

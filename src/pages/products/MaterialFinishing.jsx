@@ -32,7 +32,22 @@ const finishingOptions = [
         images: ["/images/s1.jpeg", "/images/s2.jpeg"],
         details: "Unique finishing option for packaging & labels.",
     },
+    {
+        title: "Embossing",
+        text: "Raised design effect for premium tactile feel.",
+        image: "/images/flex1.jpeg",
+        images: ["/images/flex3.jpeg", "/images/flex2.jpeg"],
+        details: "Enhances luxury appeal on business cards, invitations, and packaging.",
+    },
+    {
+        title: "Foil Stamping",
+        text: "Metallic finish for a classy, shiny look.",
+        image: "/images/flex-bg1.jpg",
+        images: ["/images/flex-bg2.jpg", "/images/flex-bg3.jpeg"],
+        details: "Perfect for logos, labels, and special print editions.",
+    },
 ];
+
 
 export default function MaterialFinishing() {
     const [selectedOption, setSelectedOption] = useState(null);
@@ -109,8 +124,12 @@ export default function MaterialFinishing() {
             {selectedOption && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                     <div className="bg-white rounded-3xl p-6 max-w-lg w-full relative">
-                        <button className="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-gray-800"
-                            onClick={() => setSelectedOption(null)}>&times;</button>
+                        <button
+                            className="absolute top-4 right-4 z-50 text-3xl font-bold text-white hover:text-red-500 bg-red-600 hover:bg-red-700 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition"
+                            onClick={() => setSelectedProduct(null)}
+                        >
+                            &times;
+                        </button>
                         <div className="relative mb-4">
                             <img src={selectedOption.images[currentImage]} alt={selectedOption.title} className="w-full h-48 object-cover rounded-xl" />
                             {selectedOption.images.length > 1 && (

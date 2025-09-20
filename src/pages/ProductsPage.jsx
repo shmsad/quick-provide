@@ -50,7 +50,7 @@ export default function ProductsPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-gray-50 pt-20">
+        <div className="min-h-screen bg-gray-50 pt-12">
             {/* Hero Section */}
             <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-24 px-6 text-center">
                 <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">

@@ -137,33 +137,37 @@ export default function OutdoorFlexPrinting() {
 
             {/* Modal */}
             {selectedProduct && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                    <div className="bg-white rounded-3xl p-6 max-w-lg w-full relative">
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                    <div className="bg-white rounded-3xl p-6 max-w-lg w-full relative shadow-xl">
+
+                        {/* Close Button */}
+                        {/* Close Button */}
                         <button
-                            className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold"
+                            className="absolute top-4 right-4 z-50 w-10 h-10 flex items-center justify-center rounded-full bg-red-600 hover:bg-red-700 transition shadow-lg"
                             onClick={() => setSelectedProduct(null)}
                         >
-                            &times;
+                            <span className="text-white text-3xl font-bold leading-none">&times;</span>
                         </button>
 
-                        {/* Carousel */}
+
+                        {/* Image Carousel */}
                         <div className="relative mb-4">
                             <img
-                                src={selectedProduct.images ? selectedProduct.images[currentImage] : selectedProduct.image}
+                                src={selectedProduct.images[currentImage]}
                                 alt={selectedProduct.title}
                                 className="w-full h-48 object-cover rounded-xl"
                             />
-                            {selectedProduct.images && selectedProduct.images.length > 1 && (
+                            {selectedProduct.images.length > 1 && (
                                 <>
                                     <button
                                         onClick={prevImage}
-                                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full hover:bg-white"
+                                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow"
                                     >
                                         &#10094;
                                     </button>
                                     <button
                                         onClick={nextImage}
-                                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full hover:bg-white"
+                                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow"
                                     >
                                         &#10095;
                                     </button>
@@ -171,12 +175,14 @@ export default function OutdoorFlexPrinting() {
                             )}
                         </div>
 
-                        <h3 className="text-2xl font-bold text-green-600 mb-2">{selectedProduct.title}</h3>
-                        <p className="text-gray-700 mb-4">{selectedProduct.text}</p>
+                        {/* Product Info */}
+                        <h3 className="text-2xl font-bold text-indigo-600">{selectedProduct.title}</h3>
+                        <p className="text-gray-700 mb-2">{selectedProduct.text}</p>
                         <p className="text-gray-600">{selectedProduct.details}</p>
                     </div>
                 </div>
             )}
+
         </div>
     );
 }
