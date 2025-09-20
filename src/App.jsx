@@ -9,10 +9,11 @@ import ContactPage from "./pages/ContactPage";
 import PageWrapper from "./components/PageWrapper";
 import AboutPage from "./pages/AboutPage";
 import ProductsPage from "./pages/ProductsPage";
-import BannersPage from "./pages/products/BannersPage";
-import FlexPrintingPage from "./pages/products/FlexPrintingPage";
-import GlowSignPage from "./pages/products/GlowSignPage";
-import POSPage from "./pages/products/POSPage";
+import IndoorFlexPrinting from "./pages/products/IndoorFlexPrinting";
+import OutdoorFlexPage from "./pages/products/OutdoorFlexPage";
+import CustomizedProducts from "./pages/products/CustomizedProducts";
+import MaterialFinishing from "./pages/products/MaterialFinishing";
+import ProductDetailPage from "./pages/ProductDetailPage";
 import ScrollToTop from "./components/ScrollToTop";
 import VideoPage from "./pages/VideoPage";
 
@@ -27,14 +28,22 @@ function AnimatedRoutes() {
         {/* ✅ New Products Page */}
         <Route path="/products" element={<PageWrapper><ProductsPage /></PageWrapper>} />
         {/* /* Product Static Pages */}
-        <Route path="/products/flex-printing" element={<PageWrapper><FlexPrintingPage /></PageWrapper>} />
-        <Route path="/products/banners" element={<PageWrapper><BannersPage /></PageWrapper>} />
-        <Route path="/products/glow-sign" element={<PageWrapper><GlowSignPage /></PageWrapper>} />
-        <Route path="/products/pos" element={<PageWrapper><POSPage /></PageWrapper>} />
+        <Route path="/products/indoor" element={<PageWrapper><IndoorFlexPrinting /></PageWrapper>} />
+        {/* Indoor Flex */}
+        <Route path="/products/indoor/:product" element={<ProductDetailPage />} />
+        <Route path="/products/outdoor" element={<PageWrapper><OutdoorFlexPage /></PageWrapper>} />
+        {/* /* Outdoor Flex */}
+        <Route path="/products/outdoor/:product" element={<ProductDetailPage />} />
+        <Route path="/products/customize" element={<PageWrapper><CustomizedProducts /></PageWrapper>} />
+        {/* Customized Products */}
+        <Route path="/products/customize/:product" element={<ProductDetailPage />} />
+        <Route path="/products/material_finishing" element={<PageWrapper><MaterialFinishing /></PageWrapper>} />
+        {/* Material & Finishing */}
+        <Route path="/products/material_finishing/:product" element={<ProductDetailPage />} />
         <Route path="/about" element={<PageWrapper><AboutPage /></PageWrapper>} />
         <Route path="/services" element={<PageWrapper><ServicesPage /></PageWrapper>} />
         <Route path="/gallery" element={<PageWrapper><GalleryPage /></PageWrapper>} />
-        <Route path="/video" element={<PageWrapper><VideoPage/></PageWrapper>}/>
+        <Route path="/video" element={<PageWrapper><VideoPage /></PageWrapper>} />
         <Route path="/certificates" element={<PageWrapper><CertificatesPage /></PageWrapper>} />
         <Route path="/contact" element={<PageWrapper><ContactPage /></PageWrapper>} />
       </Routes>

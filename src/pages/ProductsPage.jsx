@@ -1,60 +1,52 @@
 // src/pages/ProductsPage.jsx
-import React from "react";
-import { FaPrint, FaFileAlt, FaStore } from "react-icons/fa";
-import { HiOutlinePhotograph } from "react-icons/hi";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import CallToAction from "../components/CallToAction";
 import { Link } from "react-router-dom";
 
 export default function ProductsPage() {
+    const [selectedCategory, setSelectedCategory] = useState(null);
+
     const productCategories = [
         {
             name: "Large Format Digital",
             description: "Perfect for banners, vinyl prints, vehicle wraps, and backlit flex.",
-            icon: <FaPrint size={50} />,
+            image: "/images/pc1.jpeg",
+            details: "We specialize in high-resolution large format printing suitable for billboards, flex boards, vehicle wraps, and more.",
+            examples: ["/images/s1.jpeg", "/images/s2.jpeg", "/images/s3.jpeg"],
             bg: "from-blue-500 to-indigo-600",
-            link: "/products/flex-printing",
         },
         {
             name: "Banner Printing",
             description: "Indoor & outdoor banners, roll-ups, standees for advertising.",
-            icon: <FaFileAlt size={50} />,
+            image: "/images/pc2.jpeg",
+            details: "Get durable and vibrant banners for promotions, events, and branding. Available in multiple sizes and materials.",
+            examples: ["/images/s4.jpeg", "/images/s5.jpeg"],
             bg: "from-pink-500 to-red-600",
-            link: "/products/banners",
         },
         {
             name: "Point-of-Sale",
             description: "Display stands, promotional boards, branding solutions for stores.",
-            icon: <FaStore size={50} />,
+            image: "/images/pc3.jpeg",
+            details: "We create engaging POS displays that attract customers and enhance store visibility.",
+            examples: ["/images/pc1.jpeg", "/images/pc2.jpeg"],
             bg: "from-green-500 to-teal-600",
-            link: "/products/pos",
         },
         {
             name: "Signage",
             description: "LED boards, acrylic letters, and indoor/outdoor signages.",
-            icon: <HiOutlinePhotograph size={50} />,
+            image: "/images/pc4.jpeg",
+            details: "High-quality signages including LED, acrylic, and glow signs for businesses.",
+            examples: ["/images/pc3.jpeg", "/images/pc4.jpeg"],
             bg: "from-purple-500 to-pink-600",
-            link: "/products/glow-sign",
         },
     ];
 
     const whyChooseUs = [
-        {
-            title: "Expert Team",
-            description: "Professional designers and printing experts to deliver quality.",
-        },
-        {
-            title: "High-Quality Prints",
-            description: "We use premium materials for sharp and vibrant prints.",
-        },
-        {
-            title: "Quick Turnaround",
-            description: "Fast delivery without compromising quality.",
-        },
-        {
-            title: "Custom Solutions",
-            description: "Tailored printing solutions for businesses of all sizes.",
-        },
+        { title: "Expert Team", description: "Professional designers and printing experts to deliver quality." },
+        { title: "High-Quality Prints", description: "We use premium materials for sharp and vibrant prints." },
+        { title: "Quick Turnaround", description: "Fast delivery without compromising quality." },
+        { title: "Custom Solutions", description: "Tailored printing solutions for businesses of all sizes." },
     ];
 
     return (
@@ -90,17 +82,21 @@ export default function ProductsPage() {
                             whileHover={{ scale: 1.05, rotate: 1 }}
                             whileTap={{ scale: 0.98 }}
                             className={`cursor-pointer bg-gradient-to-br ${cat.bg} text-white p-8 rounded-3xl shadow-2xl hover:shadow-3xl flex flex-col items-center text-center transition-all`}
-                            onClick={() => window.location.href = cat.link}
+                            onClick={() => setSelectedCategory(cat)}
                         >
                             <motion.div
                                 whileHover={{ y: -5 }}
                                 transition={{ type: "spring", stiffness: 200 }}
                                 className="mb-4"
                             >
-                                {cat.icon}
+                                <img
+                                    src={cat.image}
+                                    alt={cat.name}
+                                    className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 mx-auto rounded-xl object-cover"
+                                />
                             </motion.div>
                             <h3 className="text-2xl font-semibold mb-2">{cat.name}</h3>
-                            <p className="text-white/90">{cat.description}</p>
+                            <p className="text-white/90 text-sm sm:text-base">{cat.description}</p>
                         </motion.div>
                     ))}
                 </div>
@@ -142,8 +138,38 @@ export default function ProductsPage() {
                 </Link>
             </section>
 
-            {/* Optional: CallToAction Component */}
             <CallToAction />
+
+            {/* Modal for Product Details */}
+            {selectedCategory && (
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-3xl p-6 max-w-2xl w-full relative">
+                        <button
+                            className="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-gray-800"
+                            onClick={() => setSelectedCategory(null)}
+                        >
+                            &times;
+                        </button>
+
+                        <h3 className="text-3xl font-bold text-blue-600 mb-4">
+                            {selectedCategory.name}
+                        </h3>
+                        <p className="text-gray-700 mb-4">{selectedCategory.details}</p>
+
+                        {/* Example Images */}
+                        <div className="grid grid-cols-2 gap-4">
+                            {selectedCategory.examples.map((img, i) => (
+                                <img
+                                    key={i}
+                                    src={img}
+                                    alt="example"
+                                    className="w-full h-40 object-cover rounded-xl"
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

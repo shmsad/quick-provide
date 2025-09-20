@@ -1,3 +1,4 @@
+// src/components/ServiceModal.jsx
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -23,10 +24,9 @@ export default function ServiceModal({ open, item, onClose }) {
                             <h3 className="text-xl font-bold">{item.title}</h3>
                             <p className="text-sm text-gray-600 mt-2">{item.description}</p>
                         </div>
-                        <button onClick={onClose} className="text-gray-500">✕</button>
+                        <button onClick={onClose} className="text-gray-500 text-2xl font-bold">✕</button>
                     </div>
 
-                    {/* Example workflow for Flex Printing */}
                     <div className="mt-4 text-gray-700">
                         <h4 className="font-semibold">Our Process</h4>
                         <ol className="list-decimal ml-5 mt-2 text-sm">
@@ -38,7 +38,10 @@ export default function ServiceModal({ open, item, onClose }) {
                     </div>
 
                     <div className="mt-4 text-right">
-                        <button onClick={onClose} className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
+                        <button
+                            onClick={onClose}
+                            className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
+                        >
                             Close
                         </button>
                     </div>

@@ -5,12 +5,42 @@ const AppContext = createContext();
 
 export function AppProvider({ children }) {
     const services = [
-        { id: 1, title: "Flex Printing", description: "High-quality flex printing for indoor & outdoor branding.", icon: <FaPrint size={40} className="text-white" /> },
-        { id: 2, title: "Hoardings & Banners", description: "Large format hoardings, banners, and posters for impactful advertisement.", icon: <FaFileAlt size={40} className="text-white" /> },
-        { id: 3, title: "Glow Sign Boards", description: "Attractive glow sign boards with LED/Neon options for shops & offices.", icon: <FaStore size={40} className="text-white" /> },
-        { id: 4, title: "Vinyl Printing", description: "Custom vinyl printing for walls, glass, and vehicles.", icon: <FaPhotoVideo size={40} className="text-white" /> },
-        { id: 5, title: "Canopy & Standee", description: "Promotional canopy and standee design & printing for events.", icon: <FaClipboard size={40} className="text-white" /> },
-        { id: 6, title: "Digital Printing", description: "High-resolution digital printing for brochures, flyers, and visiting cards.", icon: <FaDesktop size={40} className="text-white" /> },
+        {
+            id: 1,
+            title: "Flex Printing",
+            description: "High-quality flex printing for indoor & outdoor branding.",
+            image: "/images/services/flex-printing.jpg"
+        },
+        {
+            id: 2,
+            title: "Hoardings & Banners",
+            description: "Large format hoardings, banners, and posters for impactful advertisement.",
+            image: "/images/services/hoardings-banners.jpg"
+        },
+        {
+            id: 3,
+            title: "Glow Sign Boards",
+            description: "Attractive glow sign boards with LED/Neon options for shops & offices.",
+            image: "/images/services/glow-sign.jpg"
+        },
+        {
+            id: 4,
+            title: "Vinyl Printing",
+            description: "Custom vinyl printing for walls, glass, and vehicles.",
+            image: "/images/services/vinyl-printing.jpg"
+        },
+        {
+            id: 5,
+            title: "Canopy & Standee",
+            description: "Promotional canopy and standee design & printing for events.",
+            image: "/images/services/canopy-standee.jpg"
+        },
+        {
+            id: 6,
+            title: "Digital Printing",
+            description: "High-resolution digital printing for brochures, flyers, and visiting cards.",
+            image: "/images/services/digital-printing.jpg"
+        },
     ];
 
     const gallery = [

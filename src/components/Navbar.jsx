@@ -28,10 +28,10 @@ export default function Navbar() {
     };
 
     const productItems = [
-        { to: "/products/flex-printing", label: "Flex Printing" },
-        { to: "/products/banners", label: "Banners" },
-        { to: "/products/glow-sign", label: "Glow Sign" },
-        { to: "/products/pos", label: "Point of Sale" },
+        { to: "/products/outdoor", label: "Outdoor Flex Printing" },
+        { to: "/products/indoor", label: "Indoor Flex Printing" },
+        { to: "/products/customize", label: "Customize Products" },
+        { to: "/products/material_finishing", label: "Material Finishing" },
     ];
 
     return (
