@@ -38,9 +38,19 @@ export default function Navbar() {
         <header className="fixed w-full z-50 bg-white shadow-md">
             <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-0">
                 {/* Logo */}
-                <NavLink to="/">
-                    <img src="/images/main_logo.png" alt="Logo" className="h-12 w-12 rounded-full" />
+                {/* Logo */}
+                <NavLink to="/" className="flex items-center gap-2">
+                    <img
+                        src="/images/main_logo.png"
+                        alt="Logo"
+                        className="h-14 w-14 rounded-full border-2 border-indigo-600 shadow-md transform hover:scale-105 transition-transform duration-300"
+                    />
+                    {/* Brand Name - hidden on mobile */}
+                    <span className="hidden md:inline text-xl font-bold bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent">
+                        Flex Printing 
+                    </span>
                 </NavLink>
+
 
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex gap-6 items-center relative">
