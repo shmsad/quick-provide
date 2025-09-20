@@ -63,9 +63,28 @@ export function AppProvider({ children }) {
         udyam: "UDYAM-DL-08-0095527",
         owner: "Rajesh Kumar",
     };
+    const teamMembers = [
+        {
+            name: "Mohd Shmsad",
+            role: "Project Lead",
+            image: "/images/s3.jpeg", // store images in public/images/team
+        },
+        {
+            name: "Ayesha Khan",
+            role: "Designer",
+            image: "/images/s2.jpeg",
+        },
+        {
+            name: "Rohit Singh",
+            role: "Developer",
+            image: "/images/s1.jpeg",
+        },
+        // Add more members as needed
+    ];
+
 
     return (
-        <AppContext.Provider value={{ services, gallery, certificates, contact }}>
+        <AppContext.Provider value={{ services, gallery, certificates, contact, teamMembers }}>
             {children}
         </AppContext.Provider>
     );

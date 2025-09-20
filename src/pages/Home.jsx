@@ -10,9 +10,11 @@ import GalleryPreview from "../components/GalleryPreview";
 import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
 import CallToAction from "../components/CallToAction";
+import Team from "../components/Team.jsx"; // ✅ Import Team
 import { useAppContext } from "../context/AppContext";
+
 export default function Home() {
-    const { services, galleryImages } = useAppContext(); // galleryImages: array of image URLs
+    const { services, galleryImages, teamMembers } = useAppContext(); // ✅ Include teamMembers
 
     return (
         <div className="overflow-x-hidden">
@@ -33,6 +35,9 @@ export default function Home() {
 
             {/* Stats */}
             <Stats />
+
+            {/* Team Section */}
+            <Team members={teamMembers} /> {/* ✅ Team added */}
 
             {/* Gallery Preview */}
             <GalleryPreview images={galleryImages} limit={6} />
