@@ -27,12 +27,14 @@ export default function Navbar() {
         visible: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 300 } },
     };
 
-    const productItems = [
-        { to: "/products/outdoor", label: "Outdoor Flex Printing" },
-        { to: "/products/indoor", label: "Indoor Flex Printing" },
-        { to: "/products/customize", label: "Customize Products" },
-        { to: "/products/material_finishing", label: "Material Finishing" },
-    ];
+   const productItems = [
+    { to: "/products/outdoor", label: "Outdoor Flex Printing" },
+    { to: "/products/indoor", label: "Indoor Flex Printing" },
+    { to: "/products/customize", label: "Customize Products" },
+    { to: "/products/material_finishing", label: "Material Finishing" },
+    { to: "/products/rollup_banners", label: "Roll-up Banners" }, // naya item 1
+    { to: "/products/backlit_flex", label: "Backlit Flex Printing" }, // naya item 2
+];
 
     return (
         <header className="fixed w-full z-50 bg-white shadow-md">
